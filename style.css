@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modes, .exercises, .mood {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    margin: 5px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #8ac6d1;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #72a8b0;
+}
+
+.chat-window {
+    background: white;
+    padding: 15px;
+    height: 350px;
+    overflow-y: scroll;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #ccc;
+}
+
+.message-box {
+    display: flex;
+    margin-top: 10px;
+}
+
+.message-box input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.message-box button {
+    margin-left: 5px;
+}
+
+.message {
+    padding: 6px 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    max-width: 80%;
+    animation: fadeIn 0.3s ease;
+}
+
+.message.user {
+    background-color: #d0f0fd;
+    align-self: flex-end;
+}
+
+.message.bot {
+    background-color: #f0f0f0;
+    align-self: flex-start;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Ночная тема */
+body.night {
+    background-color: #1e1e2f;
+    color: #e0e0e0;
+}
+
+body.night .chat-window {
+    background: #2c2c44;
+    color: #e0e0e0;
+}
