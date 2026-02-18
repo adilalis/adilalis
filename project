@@ -1,0 +1,13 @@
+sairena-ai/
+│
+├── app.py
+├── requirements.txt
+├── database.db (создастся автоматически)
+│
+├── templates/
+│     └── index.html
+│
+├── static/
+│     └── style.css
+│
+└── README.md
