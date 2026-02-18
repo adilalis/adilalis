@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6; /* light, soft background */
+    padding: 20px;
+}
+
+#chat {
+    margin-top: 20px;
+    background: white;
+    padding: 15px;
+    height: 300px;
+    overflow-y: scroll; /* vertical scroll if content overflows */
+    border-radius: 10px; /* rounded corners */
+}
+
+button {
+    margin: 5px;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    background-color: #8ac6d1; /* soft teal color */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7bb0b9;
+}
