@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sairena — Online Psychologist</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Sairena (Rena) 🌿</h1>
+
+<div>
+    <button onclick="setMode('normal')">Normal Mode</button>
+    <button onclick="setMode('panic')">Panic</button>
+    <button onclick="setMode('night')">Night Thoughts</button>
+</div>
+
+<div id="chat"></div>
+
+<input type="text" id="message" placeholder="Write a message...">
+<button onclick="sendMessage()">Send</button>
+
+<script>
+function setMode(mode) {
+    fetch("/set_mode", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({mode: mode})
+    });
+}
+
+function sendMessage() {
+    let message = document.getElementById("message").value;
+
+    fetch("/chat", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({message: message})
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("chat").innerHTML += 
+            "<p><b>You:</b> " + message + "</p>" +
+            "<p><b>Rena:</b> " + data.response + "</p>";
+    });
+
+    document.getElementById("message").value = "";
+}
+</script>
+
+</body>
+</html>
